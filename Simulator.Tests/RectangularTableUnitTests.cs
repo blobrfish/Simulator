@@ -42,7 +42,7 @@ namespace Simulator.Tests
         }
 
         [TestMethod]
-        public void Check_If_MovingObject_Moves_One_Step_Forward()
+        public void Check_If_MovingObject_MovesOneStepForward()
         {
             //arrange
             string testCommands = "1,0";
@@ -58,7 +58,7 @@ namespace Simulator.Tests
         }
 
         [TestMethod]
-        public void Check_If_MovingObject_Moves_One_Step_Backward()
+        public void Check_If_MovingObject_MovesOneStepBackward()
         {
             //arrange
             string testCommands = "2,0";
