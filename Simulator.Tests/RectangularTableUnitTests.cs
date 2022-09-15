@@ -42,7 +42,7 @@ namespace Simulator.Tests
         }
 
         [TestMethod]
-        public void Check_If_MovingObject_MovesOneStepForward()
+        public void Check_If_MovingObject_MovesOneStepForward_Vertical()
         {
             //arrange
             string testCommands = "1,0";
@@ -58,11 +58,44 @@ namespace Simulator.Tests
         }
 
         [TestMethod]
-        public void Check_If_MovingObject_MovesOneStepBackward()
+        public void Check_If_MovingObject_MovesOneStepBackward_Vertical()
         {
             //arrange
             string testCommands = "2,0";
             string expectedFinalOutput = "[1,2]";
+            DoBasicArrangements(testCommands);
+
+            //act
+            App.Run();
+
+            //assert
+            Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
+
+        }
+
+
+        [TestMethod]
+        public void Check_If_MovingObject_MovesOneStepForward_Horizontal()
+        {
+            //arrange
+            string testCommands = "3,1,0";
+            string expectedFinalOutput = "[2,1]";
+            DoBasicArrangements(testCommands);
+
+            //act
+            App.Run();
+
+            //assert
+            Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
+
+        }
+
+        [TestMethod]
+        public void Check_If_MovingObject_MovesOneStepBackward_Horizontal()
+        {
+            //arrange
+            string testCommands = "3,2,0";
+            string expectedFinalOutput = "[0,1]";
             DoBasicArrangements(testCommands);
 
             //act
@@ -104,6 +137,39 @@ namespace Simulator.Tests
             Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
         }
 
+
+        [TestMethod]
+        public void Check_If_MovingObject_RotateFullCircle_Clockwise()
+        {
+            //arrange
+            string testCommands = "3,3,3,3,1,0";
+            string expectedFinalOutput = "[1,0]";
+            DoBasicArrangements(testCommands);
+
+            //act
+            App.Run();
+
+            //assert
+            Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
+
+        }
+
+
+        [TestMethod]
+        public void Check_If_MovingObject_RotateFullCircle_CounterClockwise()
+        {
+            //arrange
+            string testCommands = "4,4,4,4,1,0";
+            string expectedFinalOutput = "[1,0]";
+            DoBasicArrangements(testCommands);
+
+            //act
+            App.Run();
+
+            //assert
+            Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
+
+        }
 
         [TestMethod]
         public void Check_If_MovingObject_IsOutOfTable()
