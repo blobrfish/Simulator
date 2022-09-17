@@ -1,9 +1,8 @@
-﻿using Simulator.Interfaces;
-using Simulator.Models.Concrete;
+﻿using Simulator.Core.Concretions;
 
-namespace Simulator.Abstractions
+namespace Simulator.Core.Abstractions
 {
-    public abstract class CommandBase : ICommand
+    public abstract class Command 
     {
         protected MovingObject MovingObject => Table.MovingObject;
         public int Code { get; }
@@ -11,7 +10,7 @@ namespace Simulator.Abstractions
         protected readonly string Name;
         public string CodeAndName => string.Format("{0}={1}", this.Code, this.Name);
 
-        public CommandBase(int code, string name)
+        public Command(int code, string name)
         {
             this.Code = code;
             this.Name = name;

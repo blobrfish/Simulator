@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Simulator.Abstractions;
-using Simulator.Structs;
+using Simulator.Core.Abstractions;
 using System.ComponentModel;
-namespace Simulator.Concretes.Tables
+
+namespace Simulator.Core.Concretions.Tables
 {
     [DisplayName("Rectangular")]
     public class RectangularTable : Table

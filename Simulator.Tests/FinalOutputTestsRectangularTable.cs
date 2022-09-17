@@ -2,11 +2,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Text;
+using Simulator.Core.Interfaces;
+using Simulator.Core;
 
 namespace Simulator.Tests
 {
     [TestClass]
-    public class RectangularTableUnitTests
+    public class FinalOutputTestsRectangularTable
     {
 
         StringBuilder StringBuilder = new StringBuilder();
@@ -20,7 +22,7 @@ namespace Simulator.Tests
                 return finalOutPut;
             }
         }
-
+        IUIWriterAndReader ConsoleAdapter = new ConsoleAdapter(); 
         void RedirectStdOut()
         {
             
@@ -50,7 +52,7 @@ namespace Simulator.Tests
             DoBasicArrangements(testCommands);
 
             //act
-            App.Run();
+            App.Run(ConsoleAdapter);
            
             //assert
             Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
@@ -66,7 +68,7 @@ namespace Simulator.Tests
             DoBasicArrangements(testCommands);
 
             //act
-            App.Run();
+            App.Run(ConsoleAdapter);
 
             //assert
             Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
@@ -83,7 +85,7 @@ namespace Simulator.Tests
             DoBasicArrangements(testCommands);
 
             //act
-            App.Run();
+            App.Run(ConsoleAdapter);
 
             //assert
             Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
@@ -99,7 +101,7 @@ namespace Simulator.Tests
             DoBasicArrangements(testCommands);
 
             //act
-            App.Run();
+            App.Run(ConsoleAdapter);
 
             //assert
             Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
@@ -115,7 +117,7 @@ namespace Simulator.Tests
             DoBasicArrangements(testCommands);
 
             //act
-            App.Run();
+            App.Run(ConsoleAdapter);
 
             //assert
             Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
@@ -131,7 +133,7 @@ namespace Simulator.Tests
             DoBasicArrangements(testCommands);
 
             //act
-            App.Run();
+            App.Run(ConsoleAdapter);
 
             //assert
             Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
@@ -147,7 +149,7 @@ namespace Simulator.Tests
             DoBasicArrangements(testCommands);
 
             //act
-            App.Run();
+            App.Run(ConsoleAdapter);
 
             //assert
             Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
@@ -164,7 +166,7 @@ namespace Simulator.Tests
             DoBasicArrangements(testCommands);
 
             //act
-            App.Run();
+            App.Run(ConsoleAdapter);
 
             //assert
             Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
@@ -181,7 +183,7 @@ namespace Simulator.Tests
             DoBasicArrangements(testCommands, widthHeightAndStartingPointForMovingObject);
 
             //act
-            App.Run();
+            App.Run(ConsoleAdapter);
 
             //assert
             Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);
@@ -197,7 +199,7 @@ namespace Simulator.Tests
             DoBasicArrangements(testCommands, widthHeightAndStartingPointForMovingObject);
 
             //act
-            App.Run();
+            App.Run(ConsoleAdapter);
 
             //assert
             Assert.AreEqual<string>(expectedFinalOutput, FinalOutput);

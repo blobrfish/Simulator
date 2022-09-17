@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Simulator.Interfaces;
-namespace Simulator.Concretes
+using Simulator.Core.Abstractions;
+namespace Simulator.Core.Concretions
 {
-    public class CommandService : ICommandService
+    public class CommandService 
     {
-        IList<ICommand> AvailableCommands = new List<ICommand>();
+        IList<Command> AvailableCommands = new List<Command>();
         IList<int> CommandCodesToExecute = new List<int>();
         IEnumerable<Type> AvailableCommandTypes => AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(s => s.GetTypes())
-                .Where(p => typeof(ICommand).IsAssignableFrom(p) && !p.IsAbstract);
+                .Where(p => typeof(Command).IsAssignableFrom(p) && !p.IsAbstract);
 
         public CommandService()
         {
@@ -22,7 +22,7 @@ namespace Simulator.Concretes
         {
             foreach (var availableCommandType in AvailableCommandTypes)
             {
-                AvailableCommands.Add((ICommand)Activator.CreateInstance(availableCommandType));
+                AvailableCommands.Add((Command)Activator.CreateInstance(availableCommandType));
             }
         }
 

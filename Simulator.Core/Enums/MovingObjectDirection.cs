@@ -1,4 +1,4 @@
-﻿namespace Simulator.Enums
+﻿namespace Simulator.Core.Enums
 {
     public enum MovingObjectDirection
     {

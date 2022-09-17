@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Simulator.Core\Simulator.Core.csproj" />
     <ProjectReference Include="..\Simulator\Simulator.csproj" />
   </ItemGroup>
 

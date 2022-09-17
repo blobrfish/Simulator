@@ -1,8 +1,8 @@
-﻿
-using Simulator.Abstractions;
-namespace Simulator.Concretes.Commands
+﻿using Simulator.Core.Abstractions;
+
+namespace Simulator.Core.Concretions.Commands
 {
-    public class QuitSimulatioAndPrintResultsStdout : CommandBase
+    public class QuitSimulatioAndPrintResultsStdout : Command
     {
         public QuitSimulatioAndPrintResultsStdout() :base(0, "Quit simulation and print results to stdout") 
         {}

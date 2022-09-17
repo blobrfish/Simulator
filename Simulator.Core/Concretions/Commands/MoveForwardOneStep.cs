@@ -1,8 +1,8 @@
-﻿
-using Simulator.Abstractions;
-namespace Simulator.Concretes.Commands
+﻿using Simulator.Core.Abstractions;
+
+namespace Simulator.Core.Concretions.Commands
 {
-    public class MoveForwardOneStep : CommandBase
+    public class MoveForwardOneStep : Command
     {
         public MoveForwardOneStep() :base(1, "Move forward one step") 
         {}

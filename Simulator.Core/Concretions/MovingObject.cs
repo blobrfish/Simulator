@@ -1,10 +1,8 @@
-﻿using Simulator.Abstractions;
-using Simulator.Enums;
-using Simulator.Interfaces;
-using Simulator.Structs;
-namespace Simulator.Models.Concrete
+﻿using Simulator.Core.Abstractions;
+using Simulator.Core.Enums;
+namespace Simulator.Core.Concretions
 {
-    public class MovingObject :IMovingObject
+    public class MovingObject 
     {
         Position Position;
         MovingObjectDirection Direction = MovingObjectDirection.North;

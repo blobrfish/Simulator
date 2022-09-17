@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Simulator.Models.Concrete;
-using Simulator.Enums;
-using Simulator.Structs; 
-namespace Simulator.Abstractions
+using Simulator.Core.Concretions;
+using Simulator.Core.Enums;
+namespace Simulator.Core.Abstractions
 {
     public abstract class Table
     {

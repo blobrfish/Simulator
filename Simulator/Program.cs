@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Simulator.Interfaces;
-using System.Reflection;
-using System.Linq;
-using System.IO;
-using System.Text;
+﻿using Simulator.Core;
 
 namespace Simulator
 {
@@ -12,7 +6,7 @@ namespace Simulator
     {
         static void Main(string[] args)
         {
-            App.Run();
+            App.Run(new ConsoleAdapter());
         }
     }
 }

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Simulator.Interfaces;
+using Simulator.Core.Interfaces;
+using Simulator.Core.Abstractions;
 using System.ComponentModel;
-namespace Simulator.Concretes
+
+namespace Simulator
 {
-    public class CustomConsole : IUIWriterAndReader
+    public class ConsoleAdapter : IUIWriterAndReader
     {
-        public string AskForCommands(IEnumerable<ICommand> availableCommands)
+        public string AskForCommands(IEnumerable<Command> availableCommands)
         {
             Console.WriteLine("Please enter the commands for the moving object. Add multiple commands by comma seperation. Finish off with 0.");
             for (int index = 0; index < availableCommands.Count(); index++)

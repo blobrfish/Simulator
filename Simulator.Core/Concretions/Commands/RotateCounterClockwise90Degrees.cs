@@ -1,7 +1,8 @@
-﻿using Simulator.Abstractions;
-namespace Simulator.Concretes.Commands
+﻿using Simulator.Core.Abstractions;
+
+namespace Simulator.Core.Concretions.Commands
 {
-    public class RotateCounterClockwise90Degrees : CommandBase
+    public class RotateCounterClockwise90Degrees : Command
     {
         public RotateCounterClockwise90Degrees() : base(4, "Rotate counter clockwise 90 degrees")
         { }
