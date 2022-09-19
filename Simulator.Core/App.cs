@@ -1,25 +1,34 @@
 ﻿using Simulator.Core.Abstractions;
-using Simulator.Core.Concretions;
 using Simulator.Core.Interfaces;
 
 namespace Simulator.Core
 {
     public class App
     {
-        public static IUIWriterAndReader WriterAndReader;
+        public static IUI UI;
+        public static ITable Table;
+        public static IMovingObject MovingObject;
         public static CommandService CommandService;
-        public static Table Table;
-        App(IUIWriterAndReader writerAndReader)
+     
+        App(IUI uI, ITable table, IMovingObject movingObject)
         {
-            WriterAndReader = writerAndReader;
-            Table = Table.CreateTable();
-            CommandService = new CommandService();
-            CommandService.Run();
+            UI = uI;
+            Table = table;
+            MovingObject = movingObject;
+            
+            if(Table != null && MovingObject != null)
+            {
+                table.SetDimensionsAndMovingObjectStartPostion(movingObject);
+            }
+
+            CommandService = new CommandService(movingObject);
+            CommandService.ListenToCommands();
+            CommandService.RunCommands();
         }
 
-        public static App Run(IUIWriterAndReader writerAndReader)
+        public static App Run(IUI uI, ITable table, IMovingObject movingObject)
         {
-            return new App(writerAndReader);
+            return new App(uI, table, movingObject);
         }
     }
  }

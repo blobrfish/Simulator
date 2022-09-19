@@ -6,7 +6,7 @@ namespace Simulator
     {
         static void Main(string[] args)
         {
-            App.Run(new ConsoleAdapter());
+            App.Run(new MyUI(), new MyRectangularTable(), new MyMovingObject());
         }
     }
 }

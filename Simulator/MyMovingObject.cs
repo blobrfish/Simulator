@@ -1,27 +1,21 @@
-﻿using Simulator.Core.Abstractions;
+﻿using Simulator.Core.Interfaces;
 using Simulator.Core.Enums;
-namespace Simulator.Core.Concretions
+using Simulator.Core;
+
+namespace Simulator
 {
-    public class MovingObject 
+    public class MyMovingObject  : IMovingObject
     {
         Position Position;
         MovingObjectDirection Direction = MovingObjectDirection.North;
-        TableOrigoPostion TableOrigoPostion => Table.OrigoPosition; //MatrixOrigoPostion.TopLeft;
+        TableOrigoPostion TableOrigoPostion => Table.OrigoPosition; 
         readonly string OutOfAvailableCellsMessage = "[-1,-1]";
   
-        Table Table;
+        ITable Table => App.Table;
         public string FinalPosition => string.Format(IsWithinTable ? this.Position.ToString() : OutOfAvailableCellsMessage);
 
         protected bool IsWithinTable => this.Table.IsMovingObjectWithinTable(this.Position);
        
-
-        public MovingObject(Table table, Position startPosition)
-        {
-            this.Table = table;
-            this.Position = startPosition;
-        }
-
-
         public void MoveForwardOneStep()
         {
             if(Direction  == MovingObjectDirection.North)
@@ -82,7 +76,6 @@ namespace Simulator.Core.Concretions
             }
         }
 
-
         public void MoveBackwardsOneStep()
         {
             if (Direction == MovingObjectDirection.North)
@@ -102,17 +95,13 @@ namespace Simulator.Core.Concretions
                 this.Position.DecreaseX();
             }
         }
+
+        public void SetStartingPosition(Position position)
+        {
+            this.Position = position;
+        }
     }
-
-
-  
-
-  
-
-
-
-
-    }
+}
 
 
 

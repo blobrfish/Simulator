@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Simulator.Core.Concretions
+namespace Simulator.Core
 {
     public struct Position
     {

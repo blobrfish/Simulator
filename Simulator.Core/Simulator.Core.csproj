@@ -42,20 +42,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstractions\Command.cs" />
-    <Compile Include="Abstractions\Table.cs" />
     <Compile Include="App.cs" />
-    <Compile Include="Concretions\CommandService.cs" />
-    <Compile Include="Concretions\Commands\MoveBackwardsOneStep.cs" />
-    <Compile Include="Concretions\Commands\MoveForwardOneStep.cs" />
-    <Compile Include="Concretions\Commands\QuitSimulatioAndPrintResultsStdout.cs" />
-    <Compile Include="Concretions\Commands\RotateClockwise90Degrees.cs" />
-    <Compile Include="Concretions\Commands\RotateCounterClockwise90Degrees.cs" />
-    <Compile Include="Concretions\MovingObject.cs" />
-    <Compile Include="Concretions\Position.cs" />
-    <Compile Include="Concretions\Tables\RectangularTable.cs" />
+    <Compile Include="CommandService.cs" />
+    <Compile Include="Commands\MoveBackwardsOneStep.cs" />
+    <Compile Include="Commands\MoveForwardOneStep.cs" />
+    <Compile Include="Commands\QuitSimulatioAndPrintResultsStdout.cs" />
+    <Compile Include="Commands\RotateClockwise90Degrees.cs" />
+    <Compile Include="Commands\RotateCounterClockwise90Degrees.cs" />
+    <Compile Include="Interfaces\IMovingObject.cs" />
+    <Compile Include="Interfaces\ITable.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Enums\MovingObjectDirection.cs" />
     <Compile Include="Enums\TableOrigoPostion.cs" />
-    <Compile Include="Interfaces\IUIWriterAndReader.cs" />
+    <Compile Include="Interfaces\IUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
